@@ -3,33 +3,13 @@ using ConsoleApp;
 
 Console.WriteLine("Hello, World!");
 
-//funkcja wygenerowana na podstawie nagłówka funkcji
-int Sum(int a, int b) //Tokenizacja: int, Sum, (, int, a, ,, int, b, ) 
-{
-    return a + b;
-}
+var calculator = new Calculator();
 
-//CalculateFactorial -> Caluclate, Factor, ial
-
-//funkcja wygenerowana na postawie komentarza
-//substract two numbers
-int Subtract(int a, int b) => a - b;
-
-
-//multilpy two numbers
-int Multiply(float a, float b) => (int)(a * b);
-
-
-//divide two numbers
-//add error handling for division by zero using Exception
-float Divide(int a, int b)
-{
-    if (b == 0)
-    {
-        throw new DivideByZeroException("Denominator cannot be zero.");
-    }
-    return (float)a / b;
-}
+// Example usage (can be removed or modified as needed)
+// int sum = calculator.Sum(2, 3);
+// int sub = calculator.Subtract(5, 2);
+// int mul = calculator.Multiply(2.5f, 4.0f);
+// float div = calculator.Divide(10, 2);
 
 //create function that return 5 objects of Product class
 List<ConsoleApp.Product> GetProducts()
@@ -40,7 +20,8 @@ List<ConsoleApp.Product> GetProducts()
         new ConsoleApp.Product { ProductName = "Smartphone", Price = 699.99m, Description = "Latest model smartphone", Category = "Electronics", CategoryName = "Mobile Phones" },
         new ConsoleApp.Product { ProductName = "Headphones", Price = 199.99m, Description = "Noise cancelling headphones", Category = "Electronics", CategoryName = "Audio" },
         new ConsoleApp.Product { ProductName = "Coffee Maker", Price = 49.99m, Description = "Automatic coffee maker", Category = "Home Appliances", CategoryName = "Kitchen" },
-        new ConsoleApp.Product { ProductName = "Electric Kettle", Price = 29.99m, Description = "Fast boiling electric kettle", Category = "Home Appliances", CategoryName = "Kitchen" }
+        new ConsoleApp.Product { ProductName = "Electric Kettle", Price = 29.99m, Description = "Fast boiling electric kettle", Category = "Home Appliances", CategoryName = "Kitchen" },
+        new ConsoleApp.Product { ProductName = "Desk Lamp", Price = 39.99m, Description = "LED desk lamp with adjustable brightness", Category = "Home Appliances", CategoryName = "Lighting" }
     };
 }
 
@@ -54,4 +35,4 @@ Point3D CreatePoint3D(float[] tab)
     Console.WriteLine("creating new point3D using tab");
 
     return new Point3D(tab[0], tab[1], tab[2]);
-} 
+}
