@@ -1,15 +1,20 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using ConsoleApp;
+using Newtonsoft.Json;
 
 Console.WriteLine("Hello, World!");
 
 var calculator = new Calculator();
 
-// Example usage (can be removed or modified as needed)
-// int sum = calculator.Sum(2, 3);
-// int sub = calculator.Subtract(5, 2);
-// int mul = calculator.Multiply(2.5f, 4.0f);
-// float div = calculator.Divide(10, 2);
+List<Product> products = GetProducts();
+
+// Serializacja pierwszego produktu do JSON
+string json = products[0].ToJson();
+Console.WriteLine($"Serialized Product to JSON:\n{json}\n");
+
+// Deserializacja z JSON do obiektu Product
+Product deserializedProduct = Product.FromJson(json);
+Console.WriteLine($"Deserialized Product:\nName: {deserializedProduct.ProductName}, Price: {deserializedProduct.Price}, Description: {deserializedProduct.Description}, Category: {deserializedProduct.Category}, CategoryName: {deserializedProduct.CategoryName}\n");
 
 //create function that return 5 objects of Product class
 List<ConsoleApp.Product> GetProducts()
