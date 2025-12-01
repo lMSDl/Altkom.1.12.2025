@@ -19,4 +19,7 @@ if (app.Environment.IsDevelopment())
 
 app.MapControllers();
 
+// Hello World
+app.MapGet("/", () => "Hello World");
+
 app.Run();
